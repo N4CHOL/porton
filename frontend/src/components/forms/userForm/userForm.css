@@ -1,0 +1,9 @@
+.userInput{
+    width: 60%;
+}
+
+@media (max-width: 767px) {
+    .userInput{
+        width: 100%;
+    }
+  }

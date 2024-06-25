@@ -1,0 +1,61 @@
+.sidebar {
+  transition: width 0.3s ease-in-out;
+  /* Apply transitions to width and opacity */
+}
+
+/* Styles for the sidebar when it's open */
+.sidebar-open {
+  transition: width 0.3s ease-in-out, transform 0.5s ease;
+  /* Apply transition to transform property */
+  grid-template-columns: 13rem auto;
+  /* Sidebar width and remaining space */
+}
+
+/* Styles for the sidebar when it's closed */
+.sidebar-closed {
+  transition: width 0.3s ease-in-out, transform 0.5s ease;
+  /* Apply transition to transform property */
+  grid-template-columns: 5rem auto;
+  /* No sidebar, content takes full width */
+}
+
+
+.content-closed {
+  transition: width 0.3s ease-in-out, transform 0.3s ease;
+  /* Apply transition to transform property */
+  max-width: 95vw;
+  width: 94vw;
+  max-height: 100vh;
+  height: 90vh;
+}
+
+.content-open {
+  transition: width 0.3s ease-in-out, transform 0.3s ease;
+  /* Apply transition to transform property */
+  max-width: 86vw;
+  width: 85vw;
+  max-height: 100vh;
+  height: 90vh;
+}
+
+
+
+@media (max-width: 767px) {
+
+  .content-closed .content {
+    transform: translateX(0rem);
+    /* Reset content position when sidebar is closed */
+  }
+
+  .sidebar-open {
+
+    grid-template-columns: 0rem auto;
+    /* Sidebar width and remaining space */
+  }
+
+  /* Styles for the sidebar when it's closed */
+  .sidebar-closed {
+    grid-template-columns: 0rem auto;
+    /* No sidebar, content takes full width */
+  }
+}
