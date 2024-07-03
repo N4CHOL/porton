@@ -1,0 +1,23 @@
+# config file version
+apiVersion: 1
+
+# list of datasources that should be deleted from the database
+#deleteDatasources:
+#  - name: 'grafana-factoris'
+#    orgId: 1
+
+datasources:
+-  access: 'proxy'                       # make grafana perform the requests
+   editable: true                        # whether it should be editable
+   is_default: true                      # whether this should be the default DS
+   name: 'grafana-factoris'              # name of the datasource
+   org_id: 1                             # id of the organization to tie this datasource to
+   type: 'postgres'                      # type of the data source
+   url: '172.18.0.1:2345'                # url of the prom instance
+   user: 'grafanareader'
+   database: 'factoris_db'
+   secureJsonData:
+      password: 'grafanaFactoris'
+   jsonData:
+      postgresVersion: '1000'
+      sslmode: 'disable'

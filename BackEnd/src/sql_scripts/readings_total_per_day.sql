@@ -1,0 +1,1 @@
+SELECT count("Readings"."readingId"), Date("Readings"."date") from "Readings" GROUP BY Date("Readings"."date") ORDER BY Date("Readings"."date") ASC;

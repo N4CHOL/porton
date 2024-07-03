@@ -1,0 +1,30 @@
+import { initActions } from './init-actions';
+import { initActStates } from './init-actstates';
+import { initColors } from './init-asset-colors';
+import { initDaysOfWeek } from './init-daysOfWeek';
+import { initFeatures } from './init-features';
+import { initPriorities } from './init-priorities';
+import { initRoles } from './init-roles';
+import { initWorStates } from './init-worstates';
+import { initWoStates } from './init-wostates';
+import { initBasicAccessesToRoles } from './init_attach-accesses-to-roles';
+import { initRequiredFields } from './init_required_fields';
+import { initSuspensionReasons } from './init_suspension-reasons';
+import { defineAdminUser } from './test-db';
+export const initBasics = async () => {
+    await initColors();
+    await initWoStates();
+    await initFeatures();
+    await initActions();
+    await initRoles();
+    await initActStates();
+    await initBasicAccessesToRoles();
+    await defineAdminUser();
+    await initActStates();
+    await initPriorities();
+    await initDaysOfWeek();
+    await initSuspensionReasons();
+    await initRequiredFields();
+    await initWorStates();
+    console.log('[[[[[-FIN DE LA INICIALIZACION-]]]]]');
+}
