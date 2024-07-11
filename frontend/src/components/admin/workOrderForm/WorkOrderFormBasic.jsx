@@ -39,9 +39,13 @@ export default function WorkOrderFormBasic({ setPriority, setAsignee, setName, n
         const selectedId = event.target.value;
         const selected = profileSelect.find(profile => profile.profileId === selectedId);
         setAsignee(selected);
-        console.log(profileSelect)
+
+    
     };
+  
+
     console.log(profileSelect)
+
     return (
         <div className='bg-card-background ml-8 p-8 grid md:grid-cols-12 '>
             <div className='col-span-8'>

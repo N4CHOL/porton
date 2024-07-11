@@ -1,21 +1,22 @@
 // eslint-disable-next-line no-unused-vars
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import WorkOrderFormBasic from '../../../components/admin/workOrderForm/WorkOrderFormBasic'
 import WorkOrderFormDate from '../../../components/admin/workOrderForm/WorkOrderFormDate';
 import FormTitle from '../../../components/titles/formTitle/formTitle';
 import SendButton from '../../../components/buttons/sendButton/SendButton';
-import apiService from '../../../utilities/services/ApiCall';
 import WorkOrderFormTask from '../../../components/admin/workOrderForm/WorkOrderFormTask';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { showSuccessToast } from '../../../components/toast/Toast';
+import apiService from '../../../utilities/services/ApiCall';
 
 
 
-export default function WorkOrderForm() {
-
-
-
+export default function WorkOrderEdit() {
+  
+let {id} = useParams()
   //const [items, setItems] = useState([]);
+   
+  const [data, setData] = useState({});
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [asignee, setAsignee] = useState({});
@@ -26,9 +27,31 @@ export default function WorkOrderForm() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate()
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await apiService.get(`/maintenance-plan/detail/${id}`);
+        setData(response.data);  // Assuming the response has a data property that contains the fetched data
+      } catch (error) {
+        console.error("Error fetching profile details:", error);
+      }
+      console.log(data)
+
+      if (data) {
+        setName(data.name)
+
+      }
+    };
+  
+    fetchData();  // Call the async function to fetch data
+  }, [id]);
+  
+  
+
+
   const validateForm = () => {
     let errors = {};
-
     if (!name.trim()) {
       errors.name = "Name is required";
       console.log("falta name")
@@ -47,7 +70,6 @@ export default function WorkOrderForm() {
       errors.dateHourSchedueled = "Scheduled start date is required";
       console.log("falta date")
     }
-
     if (activities.length > 0) {
       activities.forEach((activity, index) => {
         if (!activity.name) {
@@ -59,7 +81,6 @@ export default function WorkOrderForm() {
         }
       });
     }
-
 
     setErrors(errors);
     return Object.keys(errors).length === 0;
@@ -81,7 +102,7 @@ export default function WorkOrderForm() {
         name,
         priority,
       };
-
+      showSuccessToast("asd");
       console.log('Form Data:', formData);
 
       //navigate("/work-order")
@@ -107,9 +128,7 @@ export default function WorkOrderForm() {
         </div>
       </div>
       <div className='mt-8 mb-8'>
-
         <WorkOrderFormTask errors={errors} setErrors={setErrors} activities={activities} setActivities={setActivities} />
-
       </div>
       <SendButton handleSubmit={handleSubmit} />
 

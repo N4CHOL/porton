@@ -119,7 +119,7 @@ export type Migration = typeof umzug._types.migration;
 // Define the app.
 const app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.use(bodyParser.json());
 app.use(cors({ origin: '*', credentials: true }));
 app.use(morgan('tiny'));

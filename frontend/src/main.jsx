@@ -25,6 +25,8 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute.jsx";
 import { AuthProvider } from "./utilities/context/AuthContext.jsx";
 import WorkOrderForm from "./pages/workOrderPage/workOrderForm/WorkOrderForm.jsx";
 import WorkInProgress from "./pages/workInProgress/WorkInProgress.jsx";
+import WorkOrderEdit from "./pages/workOrderPage/workOrderEdit/WorkOrderEdit.jsx";
+
 
 
 
@@ -44,69 +46,78 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Home />,
       },
+      // {
+      //   path: "work-order",
+      //   element: (<PrivateRoute allowedTypes={'Administrador'}>
+      //     <WorkOrderAdmin />
+      //   </PrivateRoute>),
+      // },
+      // {
+      //   path: "work-order/new",
+      //   element: (<PrivateRoute allowedTypes={'Administrador'}>
+      //     <WorkOrderForm />
+      //   </PrivateRoute>),
+      // },
+      // {
+
+      //   path: "work-order/edit/:id",
+      //   element: (<PrivateRoute allowedTypes={'Administrador'}>
+      //     <WorkOrderEdit />
+      //   </PrivateRoute>),
+      // },
+
       {
-        path: "work-order",
-        element: (<PrivateRoute allowedTypes={'Administrador'}>
-          <WorkOrderAdmin />
-        </PrivateRoute>),
-      },
-      {
-        path: "work-order/new",
-        element: (<PrivateRoute allowedTypes={'Administrador'}>
-          <WorkOrderForm />
-        </PrivateRoute>),
-      },
-      {
+
         path: "workInProgress",
         element: <WorkInProgress />,
       },
-      {
-        path: "calendar",
-        element: <Home />,
-      },
-      {
-        path: "template",
-        element: <Home />,
-      },
-      {
-        path: "data",
+      // {
+      //   path: "calendar",
+      //   element: <Home />,
+      // },
+      // {
+      //   path: "template",
+      //   element: <Home />,
+      // },
+      // {
+      //   path: "data",
               
-        element: <GraphicsAdmin />,
-      },
+      //   element: <GraphicsAdmin />,
+      // },
       {
         path: "iris",
         element: <VisionAdmin />,
       },
-      {
-        path: "assets",
-        element: <Home />,
-      },
-      {
-        path: "providers",
-        element: <ProvidersAdmin />,
-      },
-      {
-        element: <ProvidersForm />,
-        path: "providers/form/:id",
+      // {
+      //   path: "assets",
+      //   element: <Home />,
+      // },
+      // {
+      //   path: "providers",
+      //   element: <ProvidersAdmin />,
+      // },
+      // {
+      //   element: <ProvidersForm />,
+      //   path: "providers/form/:id",
 
-      },
-      {
-        path: "providers/new",
-        element: <ProvidersForm />,
-      },
-      {
-        path: "users",
-        element: <UserAdmin />,
-      },
-      {
-        element: <ProvidersForm />,
-        path: "users/form/:id",
+      // },
+      // {
+      //   path: "providers/new",
+      //   element: <ProvidersForm />,
+      // },
+      // {
+      //   path: "users",
+      //   element: <UserAdmin />,
+      // },
+      // {
+      //   element: <ProvidersForm />,
+      //   path: "users/form/:id",
 
-      },
-      {
-        path: "users/form",
-        element: <UsersForm />,
-      },
+      // },
+      // {
+      //   path: "users/form",
+      //   element: <UsersForm />,
+      // },
 
     ],
   },

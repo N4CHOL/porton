@@ -32,6 +32,12 @@
     "Delete":"Borrar",
     "Name":"Nombre",
     "name":"nombre",
+    "priority": "Prioridad",
+    "description": "Descripción",
+    "assignee":"Asignado",
+    "DateStart":"Fecha de Inicio",
+    "DateEnd":"Fecha de Finalización",
+    "Send":"Enviar",
     "Surname":"Apellido",
     "surname":"apellido",
     "Position":"Cargo",
@@ -51,5 +57,9 @@
     "choose":"Seleccionar",
     "pressAnalyze":"Por favor presione el boton Analizar para comenzar el análisis.",
     "WorkInProgress":"PAGINA EN CONSTRUCCIÓN",
+    "errorPriority": "Prioridad es requerida",
+    "errorAsignee": "Asignado es requerido",
+    "errorDate": "Fecha de Inicio es requerida",
+    "errorName":"Nombre es requerido",
     "irisyap":"Soy IRIS, un programa que permite a las computadoras ver y entender imágenes y videos. Primero, uso una cámara para capturar la imagen. Luego, convierto la imagen en datos y analizo los patrones de color y forma. Finalmente, uso estos datos para reconocer objetos, personas o texto en la imagen, mejorando con el tiempo a través del aprendizaje automático."
   }

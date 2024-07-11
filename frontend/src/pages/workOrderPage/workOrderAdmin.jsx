@@ -48,9 +48,7 @@ export default function WorkOrderAdmin() {
 
   return (
     <>
-   
     <AdminLayout data={data} columns = {columns} titleTxt={"WorkOrder"}/>
-     
     </>
    
     

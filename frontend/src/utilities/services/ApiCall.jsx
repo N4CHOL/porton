@@ -1,9 +1,10 @@
 import axios from "axios";
+import authService from "./AuthService";
 // eslint-disable-next-line no-unused-vars
 import { React, useEffect } from "react";
 
 
-const API_URL = "https://portondevapi.aiphag.com/api";
+const API_URL = "https://agroapi.aiphag.com/api";
 //const API_URL = "http://localhost:3000/api/";
 
 
@@ -24,7 +25,9 @@ const get = async (endpoint) => {
     return response.data;
   } catch (error) {
     console.error("GET failed:", error);
-
+    if (error.response.status === 403){
+      authService.logout()
+    }
 
     throw error; // Rethrow the error to be handled by the caller
   }
