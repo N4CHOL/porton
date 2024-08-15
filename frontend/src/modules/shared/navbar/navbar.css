@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    max-width: 100vw;
+    width: 100vw;
+    height: 5vh;
+    background-color: #161A1D;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbarburger {
+    font-size: 0.9vi;
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.navbar-open {
+    margin-left: 13rem;
+}
+
+/* Styles for the sidebar when it's closed */
+.navbar-closed {
+    margin-left: 5rem;
+}
+
+
+@media (max-width: 767px) {
+
+    .navbar-closed {
+        margin-left: 0rem;
+    }
+    .navbar-open {
+        margin-left: 13rem;
+    }
+   
+}

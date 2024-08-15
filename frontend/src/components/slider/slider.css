@@ -1,0 +1,50 @@
+/* Slider.css */
+.slider-container {}
+
+
+
+.sliderBar {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #ddd; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Slightly transparent */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  /* Mouse-over effects */
+  .sliderBar:hover {
+    opacity: 1; /* Fully opaque on hover */
+  }
+  
+  /* The slider handle (the knob) */
+  .sliderBar::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #3b82f6; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Rounded handle */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+  }
+  
+  .sliderBar::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #3b82f6;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  }
+  
+  .value-display {
+    font-size: 18px; /* Font size */
+    margin-top: 10px; /* Space above the value display */
+    color: #333; /* Text color */
+    font-weight: bold; /* Bold text */
+  }

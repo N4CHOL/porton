@@ -1,0 +1,21 @@
+{
+    "iotId": "IOT1",
+    "assetTag": "CAL01BIM1",
+    "readings": [
+        {
+            "type": "AUTO",
+            "tag": "HORAS_MARCHA",
+            "value": "3"
+        },
+        {
+            "type": "AUTO",
+            "tag": "CANTIDAD_MANIOBRAS",
+            "value": "1"
+        },
+        {
+            "type": "AUTO",
+            "tag": "TEMPERATURA",
+            "value": "15"
+        }
+    ]
+}
