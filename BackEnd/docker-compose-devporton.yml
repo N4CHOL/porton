@@ -1,0 +1,38 @@
+# I will leave on this file what lines have to be changed to lift a new 
+# Change the name of this file to the name of the client
+
+
+version: '3.7'
+
+services:
+  dev3: # Chantge this line for the name of the client 
+    container_name: dev3-pg  #  Change the name of the container
+    image: postgres  
+    ports:
+      - '2347:5432'
+    environment:  # Nothing from the enviroment needs to be changed 
+      POSTGRES_USER: factoris_dbo
+      POSTGRES_PASSWORD: factoris123
+      POSTGRES_DB: factoris_db
+    volumes:
+      - ~/devbd:/var/lib/postgresql/data   # change the name  of the volume, from dbdata to another one so the db wont conflict with another one
+
+  devporton-backend: # Change the name of the service
+    environment:  
+      - DATABASE_URL=dev3-pg #  Change the name of the url to the container name for the bd
+      - DATABASE_NAME=factoris_db
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      target: base
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./migrations:/usr/src/app/migrations
+    container_name: devporton-backend  # Change the name of the container
+    expose:
+     - '3002' # Change the port number to the one you set on the nginx file
+    ports:
+      - '3002:3002' # Change the port number to the one you set on the nginx file
+    command: npm run dev
+    depends_on:
+      - dev3  # Change this dependecy on the name you set at the beggining 
