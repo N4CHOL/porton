@@ -1,1 +1,0 @@
-SELECT count("Readings"."readingId") from "Readings";
